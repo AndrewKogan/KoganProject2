@@ -96,8 +96,8 @@ public String coordinateForX(double x){
 public String lineInfo() {
     return "The two points are " + coordinateForX(x1) + " and " + coordinateForX(x2) + "\n" +
             "The equation of the line between these two points is: " + equation() + "\n" +
-            "The y-intercept of this line is: " + yIntercept() + "\n" +
             "The slope of this line is: " + slope() + "\n" +
+            "The y-intercept of this line is: " + yIntercept() + "\n" +
             "The distance between these points is: " + distance();
 }
 public double roundedToHundredth(double toRound){

@@ -18,7 +18,7 @@ public class LinearEquationLogic {
 
 
                 System.out.print("Enter an x value to find the y of that point: ");
-                System.out.println(line.coordinateForX(scan.nextInt()));
+                System.out.println(line.coordinateForX(scan.nextDouble()));
             }
             else {
                 System.out.println("This is a vertical line at x = " + getX(coord1) + "!");

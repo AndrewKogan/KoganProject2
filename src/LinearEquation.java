@@ -35,13 +35,52 @@ public double slope() {
 
 
 public String equation() {
+    if (yIntercept()>0) {
+        if (slope() == 0) {
+            return "y = " + yIntercept();
+        } else if (slope() == (int) (slope())) {
+            if (slope() == -1) {
+                return "y = -x +" + yIntercept();
+            }
+            if (slope() == 1) {
+                return "y = x +" + yIntercept();
+            }
+            return "y = " + (int) slope() + "x +" + yIntercept();
+        } else if ((y1 - y2 < 0 || x1 - x2 < 0) && (y1 - y2) / (x1 - x2) < 0) {
+            return "y = -" + Math.abs(y1 - y2) + "/" + Math.abs(x1 - x2) + "x +" + yIntercept();
+        }
+        return "y = " + Math.abs(y1 - y2) + "/" + Math.abs(x1 - x2) + "x +" + yIntercept();
+        }
+    if (yIntercept()<0) {
+        if (slope() == 0) {
+            return "y = " + yIntercept();
+        } else if (slope() == (int) (slope())) {
+            if (slope() == -1) {
+                return "y = -x -" + Math.abs(yIntercept());
+            }
+            if (slope() == 1) {
+                return "y = x -" + Math.abs(yIntercept());
+            }
+            return "y = " + (int) slope() + "x -" + Math.abs(yIntercept());
+        } else if ((y1 - y2 < 0 || x1 - x2 < 0) && (y1 - y2) / (x1 - x2) < 0) {
+            return "y = -" + Math.abs(y1 - y2) + "/" + Math.abs(x1 - x2) + "x -" + Math.abs(yIntercept());
+        }
+        return "y = " + Math.abs(y1 - y2) + "/" + Math.abs(x1 - x2) + "x -" + Math.abs(yIntercept());
+    }
     if (slope() == 0) {
-        return "y = " +yIntercept();
+        return "y = " + yIntercept();
+    } else if (slope() == (int) (slope())) {
+        if (slope() == -1) {
+            return "y = -x";
+        }
+        if (slope() == 1) {
+            return "y = x";
+        }
+        return "y = " + (int) slope() + "x";
+    } else if ((y1 - y2 < 0 || x1 - x2 < 0) && (y1 - y2) / (x1 - x2) < 0) {
+        return "y = -" + Math.abs(y1 - y2) + "/" + Math.abs(x1 - x2) + "x";
     }
-    else if (slope() == (int)(slope())) {
-        return "y = " + slope() + "x +" + yIntercept();
-    }
-    return "y = " + (y1-y2) + "/" + (x1-x2)  + "x +" + yIntercept();
+    return "y = " + Math.abs(y1 - y2) + "/" + Math.abs(x1 - x2) + "x";
 }
 
 
